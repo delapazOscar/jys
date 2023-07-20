@@ -2,26 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'elegant';
+  src: url("/font-family/Elegant DEMO.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.elegant{
+  font-family: 'elegant';
+}
+
+.florero-background {
+  position: relative; /* Agrega posición relativa al contenedor */
+  height: 600px;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.florero-background:before {
+  content: "";
+  background-image: url("/img/florero.PNG");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.6; /* Ajusta la opacidad de la imagen de fondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.background-opacity{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.background-opacity-1{
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+.bg-opacity{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.spacing-big{
+  letter-spacing: 7px;
+}
+
+.itinerario-bg{
+  background-image: url("/img/itinerario.PNG");
+  filter: contrast(1.1);
+  filter: brightness(.9);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.regalo-bg{
+  background-image: url("/img/regalo.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-absolute{
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-left{
+  bottom: 0;
+  left: 20%;
+  transform: translate(-50%, 50%);
+}
+
+.icon-right{
+  bottom: 0;
+  right: 10%;
+  transform: translate(-50%, 50%);
+}
+
+@media(max-width: 500px){
+  .florero-background{
+    height: 500px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
